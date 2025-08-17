@@ -52,7 +52,7 @@ const Login = () => {
   };
 
   if (isAuthorized) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return (
