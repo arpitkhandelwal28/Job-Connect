@@ -45,7 +45,7 @@ const Login = () => {
       setRole("");
 
       // ✅ Redirect to dashboard/home
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       toast.error(error.response?.data?.message || "Login failed");
     }
