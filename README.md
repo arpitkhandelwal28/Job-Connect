@@ -15,7 +15,7 @@ A comprehensive job portal application built using the MERN (MongoDB, Express.js
 - **Frontend:** React.js, React Router, Bootstrap
 - **Backend:** Node.js, Express.js, MongoDB
 - **Authentication:** JWT (JSON Web Tokens), Bcrypt (for password hash)
-- **Image Upload:** Cloudinary for storing and managing uploaded images
+- **File Storage:** Cloudinary 
 - **Deployment:** Vercel (frontend), Render(backend), MongoDB Atlas (database)
 
 ### Prerequisites
@@ -28,7 +28,7 @@ A comprehensive job portal application built using the MERN (MongoDB, Express.js
 
 1. Clone the repo:
    ```sh
-   git clone https://github.com/exclusiveabhi/react-job-portal.git
+   git clone https://github.com/arpitkhandelwal28/Job-Connect.git
    ```
 2. Install NPM packages:
 
@@ -59,4 +59,4 @@ A comprehensive job portal application built using the MERN (MongoDB, Express.js
 
 Arpit Khandelwal - [GitHub](https://github.com/arpitkhandelwal28)
 
-Project Link: [https://github.com/arpitkhandelwal28/job-connect.git]
+Project Link: [https://github.com/arpitkhandelwal28/Job-Connect]
