@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import "./App.css";
 import { Context } from "./main";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import { Toaster } from "react-hot-toast";
@@ -46,8 +46,12 @@ const App = () => {
         <Routes>
           {!isAuthorized ? (
             <>
+              {/* Redirect root to login */}
+              <Route path="/" element={<Navigate to="/login" />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              {/* Any invalid path also goes to login */}
+              <Route path="*" element={<Navigate to="/login" />} />
             </>
           ) : (
             <>
@@ -58,9 +62,10 @@ const App = () => {
               <Route path="/applications/me" element={<MyApplications />} />
               <Route path="/job/post" element={<PostJob />} />
               <Route path="/job/me" element={<MyJobs />} />
+              {/* Show NotFound only when logged in */}
+              <Route path="*" element={<NotFound />} />
             </>
           )}
-          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
         <Toaster />
@@ -70,3 +75,4 @@ const App = () => {
 };
 
 export default App;
+
