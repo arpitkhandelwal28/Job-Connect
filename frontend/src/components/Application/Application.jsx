@@ -76,13 +76,16 @@ const Application = () => {
 
     try {
       const { data } = await axios.post(
-        `${API}/api/v1/application/post`,
-        formData,
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
+     `${API}/api/v1/application/post`,
+      formData,
+    {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${localStorage.getItem("token")}`, // Add JWT token if needed
+    },
+    withCredentials: true, // Keep for cookie-based auth
+    }
+   );
 
       // Reset fields
       setName("");

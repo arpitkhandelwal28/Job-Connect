@@ -43,16 +43,14 @@ const Login = () => {
       setEmail("");
       setPassword("");
       setRole("");
-
-      // ✅ Redirect to dashboard/home
-      navigate("/");
+      setIsAuthorized(true);
     } catch (error) {
-      toast.error(error.response?.data?.message || "Login failed");
+      toast.error(error.response?.data?.message);
     }
   };
 
   if (isAuthorized) {
-    return <Navigate to="/" replace />;
+    return <Navigate to={'/'} />;
   }
 
   return (
